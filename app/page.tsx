@@ -8,8 +8,10 @@ export default function Home() {
   return (
     <>
       <Header />
-      <ClientComponent />
-      <ServerComponent />
+      <main className="h-screen">
+        <ClientComponent />
+        <ServerComponent />
+      </main>
       <Footer />
     </>
   );
