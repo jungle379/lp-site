@@ -7,8 +7,6 @@ export const ClientComponent = () => {
   return (
     <>
       <div>client</div>
-      <div>...</div>
-      <div>...</div>
     </>
   );
 };

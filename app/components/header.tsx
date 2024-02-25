@@ -3,7 +3,7 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <>
-      <div className="flex justify-between h-[300px]">
+      <div className="flex justify-between h-[200px]">
         <div className="pt-5">
           <div>
             <Link href="/">イメージ入れる</Link>
