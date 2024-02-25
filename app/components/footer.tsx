@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const Footer = () => {
-  const INSTA_URL = process.env.LOCAL_INSTA;
+  const INSTA_URL = process.env.REACT_APP_INSTA;
   return (
     <>
       <div className="flex justify-center">
