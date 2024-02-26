@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="h-screen bg-blue-300"></main>
+      <main className="h-screen bg-green-300"></main>
       <Footer />
     </>
   );

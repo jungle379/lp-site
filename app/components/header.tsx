@@ -14,7 +14,9 @@ export const Header = () => {
             <div>
               <Link href="/post">投稿</Link>
             </div>
-            <div>...</div>
+            <div>
+              <Link href="/introduce">作品</Link>
+            </div>
             <div>...</div>
           </div>
         </div>
