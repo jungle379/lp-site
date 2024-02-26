@@ -11,13 +11,12 @@ export const Header = () => {
         </div>
         <div className="px-10 pt-5">
           <div className="flex justify-between">
-            <div>
+            <div className="px-5">
               <Link href="/post">投稿</Link>
             </div>
-            <div>
+            <div className="px-5">
               <Link href="/introduce">作品</Link>
             </div>
-            <div>...</div>
           </div>
         </div>
       </div>
