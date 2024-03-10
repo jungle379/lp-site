@@ -1,10 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TextGenerateEffectDemo } from "./text";
 
 export const ClientComponent = () => {
-  const [client, setClient] = useState();
+  useEffect(() => {
+    counter;
+  }, []);
+  const counter = () => {
+    console.log("OK!");
+  };
+
   return (
     <>
       <TextGenerateEffectDemo />
