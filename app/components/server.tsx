@@ -1,3 +1,3 @@
 export const ServerComponent = () => {
-  return <div>server</div>;
+  return <div></div>;
 };
