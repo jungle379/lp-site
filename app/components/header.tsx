@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
@@ -25,12 +26,20 @@ export const Header = () => {
         </div>
         <div className="px-10 pt-10">
           <div className="flex justify-between">
-            <div className="px-5">
-              <Link href="/post">投稿</Link>
-            </div>
-            <div className="px-5">
-              <Link href="/introduce">作品</Link>
-            </div>
+            {usePathname() !== "/post" ? (
+              <div className="px-5">
+                <Link href="/post">投稿</Link>
+              </div>
+            ) : (
+              <div></div>
+            )}
+            {usePathname() !== "/introduce" ? (
+              <div className="px-5">
+                <Link href="/introduce">作者</Link>
+              </div>
+            ) : (
+              <div></div>
+            )}
             <div className={`px-5 ${isMobile ? "hidden" : ""}`}>
               <Link href="/">お仕事のご依頼はこちらから</Link>
             </div>
