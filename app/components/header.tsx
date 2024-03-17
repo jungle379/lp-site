@@ -19,22 +19,32 @@ export const Header = () => {
   return (
     <>
       <div className="flex justify-between h-[100px]">
-        <div className="pt-2">
-          <Link href="/">
-            <Image src="/1.png" alt={"icon"} width={80} height={80} />
-          </Link>
+        <div className="pt-2 flex">
+          <div className={`${isMobile ? "hidden" : ""}`}>
+            <Link href="/">
+              <Image src="/1.png" alt={"icon"} width={80} height={80} />
+            </Link>
+          </div>
+          <div
+            className={`pt-5 px-5 text-4xl font-bold text-pink-400 ${isMobile ? "hidden" : ""}`}
+          >
+            あむのジュエリーボックス
+          </div>
+          <div className={`pt-8 pl-2 text-sm ${isMobile ? "" : "hidden"}`}>
+            あむのジュエリーボックス
+          </div>
         </div>
         <div className="px-10 pt-10">
           <div className="flex justify-between">
             {usePathname() !== "/post" ? (
-              <div className="px-5">
+              <div className="px-4">
                 <Link href="/post">投稿</Link>
               </div>
             ) : (
               <div></div>
             )}
             {usePathname() !== "/introduce" ? (
-              <div className="px-5">
+              <div className="px-4">
                 <Link href="/introduce">作者</Link>
               </div>
             ) : (
@@ -43,8 +53,8 @@ export const Header = () => {
             <div className={`px-5 ${isMobile ? "hidden" : ""}`}>
               <Link href="/">お仕事のご依頼はこちらから</Link>
             </div>
-            <div className={`px-5 ${isMobile ? "" : "hidden"}`}>
-              <Link href="/">お仕事のご依頼</Link>
+            <div className={`px-2 ${isMobile ? "" : "hidden"}`}>
+              <Link href="/">仕事のご依頼</Link>
             </div>
           </div>
         </div>
