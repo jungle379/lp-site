@@ -31,7 +31,7 @@ export const Header = () => {
             あむのジュエリーボックス
           </div>
           <div className={`pt-8 pl-2 text-sm ${isMobile ? "" : "hidden"}`}>
-            あむのジュエリーボックス
+            <Link href="/">あむのジュエリーボックス</Link>
           </div>
         </div>
         <div className="px-10 pt-10">
