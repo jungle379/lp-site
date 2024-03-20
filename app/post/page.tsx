@@ -1,12 +1,16 @@
-"use client";
-
 import Image from "next/image";
-import React from "react";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
+import { getList } from "../libs/client";
+import Link from "next/link";
 
-export default function ThreeDCardDemo() {
+export default async function Home() {
+  const { contents } = await getList();
+
+  if (!contents || contents.length === 0) {
+    return <h1>No contents</h1>;
+  }
   return (
     <>
       <Header />
@@ -52,6 +56,19 @@ export default function ThreeDCardDemo() {
           </div>
         </CardBody>
       </CardContainer>
+      <div className="sm:w-[300px]">
+        <ul>
+          {contents.map((post) => {
+            return (
+              <li key={post.id}>
+                <div className="my-5 py-5 px-5 font-bold text-xl lg:text-2xl bg-gray-100">
+                  <Link href={`news/${post.id}`}>{post.title}</Link>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
       <Footer />
     </>
   );
