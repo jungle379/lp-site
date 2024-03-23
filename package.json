@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/core": "^7.6.2",
+    "@mantine/dates": "^7.6.2",
+    "@mantine/hooks": "^7.6.2",
+    "@mantine/notifications": "^7.6.2",
     "@tabler/icons-react": "^2.47.0",
     "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.0.8",
     "html-react-parser": "^5.1.8",

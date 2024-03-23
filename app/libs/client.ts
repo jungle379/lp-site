@@ -14,12 +14,6 @@ export const getList = async (queries?: MicroCMSQueries) => {
   return listData;
 };
 
-type NewsProps = {
-  id: string;
-  title: string;
-  body: string;
-};
-
 export const getDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
