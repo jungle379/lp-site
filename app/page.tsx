@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-blue-50">
+      <main className="min-h-screen">
         <ClientComponent />
         <ServerComponent />
       </main>
