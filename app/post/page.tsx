@@ -38,7 +38,7 @@ export default async function Home() {
               alt="thumbnail"
             />
           </CardItem>
-          {/* <div className="flex justify-between items-center mt-20">
+          <div className="flex justify-between items-center mt-20">
             <CardItem
               translateZ={20}
               as="button"
@@ -53,7 +53,7 @@ export default async function Home() {
             >
               Sign up
             </CardItem>
-          </div> */}
+          </div>
         </CardBody>
       </CardContainer>
       <div className="sm:w-[300px]">

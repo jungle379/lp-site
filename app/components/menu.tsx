@@ -1,22 +1,16 @@
 import { Menu, Button, Text, rem } from "@mantine/core";
-import {
-  IconSettings,
-  IconSearch,
-  IconPhoto,
-  IconMessageCircle,
-  IconTrash,
-  IconArrowsLeftRight,
-} from "@tabler/icons-react";
 
 export function MenuComp() {
   return (
     <Menu shadow="md" width={200}>
       <Menu.Target>
-        <Button>Toggle menu</Button>
+        <Button>仕事のご依頼</Button>
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Label>Application</Menu.Label>
+        <Menu.Label>お仕事のご依頼</Menu.Label>
+        <Menu.Item>aaa</Menu.Item>
+        {/* <Menu.Label>Application</Menu.Label>
         <Menu.Item
           leftSection={
             <IconSettings style={{ width: rem(14), height: rem(14) }} />
@@ -68,7 +62,7 @@ export function MenuComp() {
           }
         >
           Delete my account
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu.Dropdown>
     </Menu>
   );
