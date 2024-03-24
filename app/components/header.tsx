@@ -54,7 +54,7 @@ export const Header = () => {
               <Link href="/">お仕事のご依頼はこちらから</Link>
             </div>
             <div className={`px-2 ${isMobile ? "" : "hidden"}`}>
-              <Link href="/">仕事のご依頼</Link>
+              <Link href="/">お仕事のご依頼</Link>
             </div>
           </div>
         </div>

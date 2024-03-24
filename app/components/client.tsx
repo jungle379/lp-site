@@ -1,13 +1,13 @@
 "use client";
 
-import { PaperComp } from "./paper";
+import { MenuComp } from "./menu";
 import { TextGenerateEffectDemo } from "./text";
 
 export const ClientComponent = () => {
   return (
     <>
       <TextGenerateEffectDemo />
-      <PaperComp />
+      <MenuComp />
     </>
   );
 };
