@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ModalComp } from "./modal";
 import { MenuComp } from "./menu";
 
 export const Header = () => {
@@ -52,12 +51,7 @@ export const Header = () => {
             ) : (
               <div></div>
             )}
-            <div className={`px-5 ${isMobile ? "hidden" : ""}`}>
-              <MenuComp />
-            </div>
-            <div className={`px-2 ${isMobile ? "" : "hidden"}`}>
-              <MenuComp />
-            </div>
+            <MenuComp />
           </div>
         </div>
       </div>
