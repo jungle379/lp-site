@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
+import "@mantine/core/styles.css";
 
 export const metadata: Metadata = {
   title: "あむのジュエリーボックス",

@@ -1,17 +1,16 @@
-import { Button, Text } from "@mantine/core";
-import { modals } from "@mantine/modals";
+import { useDisclosure } from "@mantine/hooks";
+import { Modal, Button } from "@mantine/core";
 
 export function ModalComp() {
-  const openModal = () =>
-    modals.openConfirmModal({
-      title: "Please confirm your action",
-      children: (
-        <Text size="sm">
-          This action is so important that you are required to confirm it with a
-          modal. Please click one of these buttons to proceed.
-        </Text>
-      ),
-    });
+  const [opened, { open, close }] = useDisclosure(false);
 
-  return <Button onClick={openModal}>Open confirm modal</Button>;
+  return (
+    <>
+      <Modal opened={opened} onClose={close} withCloseButton={false}>
+        Modal without header, press escape or click on overlay to close
+      </Modal>
+
+      <Button onClick={open}>Open Modal</Button>
+    </>
+  );
 }
