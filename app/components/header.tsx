@@ -37,7 +37,7 @@ export const Header = () => {
             <Link href="/">あむのジュエリーボックス</Link>
           </div>
         </div>
-        <div className="px-10 pt-10">
+        <div className="px-5 pt-10">
           <div className="flex justify-between">
             {usePathname() !== "/post" ? (
               <div className="px-2">
@@ -47,7 +47,7 @@ export const Header = () => {
               <div></div>
             )}
             {usePathname() !== "/introduce" ? (
-              <div className="px-4">
+              <div className="px-2">
                 <Link href="/introduce">作者</Link>
               </div>
             ) : (

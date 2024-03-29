@@ -2,7 +2,7 @@ import { Menu, Button } from "@mantine/core";
 
 export function MenuComp() {
   return (
-    <Menu shadow="md" width={180} position="top">
+    <Menu shadow="md" width={200} position="top">
       <Menu.Target>
         <Button>仕事のご依頼</Button>
       </Menu.Target>
