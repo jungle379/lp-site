@@ -19,7 +19,7 @@ export const Header = () => {
   }, []);
   return (
     <>
-      <div className="flex justify-between h-[100px]">
+      <div className="flex bg-pink-100 justify-between h-[100px]">
         <div className="pt-2 flex">
           <div className={`${isMobile ? "hidden" : ""}`}>
             <Link href="/">
