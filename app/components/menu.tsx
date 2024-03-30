@@ -4,7 +4,9 @@ export function MenuComp() {
   return (
     <Menu shadow="md" width={200} position="top">
       <Menu.Target>
-        <Button>仕事のご依頼</Button>
+        <Button variant="transparent" color="black">
+          仕事のご依頼
+        </Button>
       </Menu.Target>
 
       <Menu.Dropdown>
