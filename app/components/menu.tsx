@@ -11,11 +11,7 @@ export function MenuComp() {
 
       <Menu.Dropdown>
         <Menu.Label>お仕事のご依頼</Menu.Label>
-        <Menu.Item leftSection>
-          お仕事のご依頼はインスタのDMでお願いします!!
-          <br />
-          インスタ:
-        </Menu.Item>
+        <Menu.Item>お仕事のご依頼はインスタのDMでお願いします!!</Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );
