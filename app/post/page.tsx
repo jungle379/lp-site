@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
-import { Header } from "../components/header";
-import { Footer } from "../components/footer";
 import { getList } from "../libs/client";
 import Link from "next/link";
 
@@ -13,7 +11,6 @@ export default async function Home() {
   }
   return (
     <>
-      <Header />
       <CardContainer className="inter-var">
         <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
           {/* <CardItem
@@ -61,7 +58,7 @@ export default async function Home() {
           {contents.map((post) => {
             return (
               <li key={post.id}>
-                <div className="my-5 py-5 px-5 font-bold text-xl lg:text-2xl bg-gray-100">
+                <div className="py-5 px-5 font-bold text-xl bg-gray-100">
                   <Link href={`news/${post.id}`}>{post.title}</Link>
                 </div>
               </li>
@@ -69,7 +66,6 @@ export default async function Home() {
           })}
         </ul>
       </div>
-      <Footer />
     </>
   );
 }
