@@ -53,7 +53,7 @@ export default async function Home() {
           </div> */}
         </CardBody>
       </CardContainer>
-      <div className="sm:w-[300px]">
+      <div className="sm:w-[300px] py-5">
         <ul>
           {contents.map((post) => {
             return (
