@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TextGenerateEffectDemo } from "../components/text";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <div className="flex justify-center text-lg items-center font-bold text-center py-5 px-20">
           あむ
         </div>
+        <TextGenerateEffectDemo />
       </main>
     </>
   );
