@@ -11,7 +11,9 @@ export default function Home() {
         <div className="flex justify-center text-lg items-center font-bold text-center py-5 px-20">
           あむ
         </div>
-        <TextGenerateEffectDemo />
+        <div className="px-4">
+          <TextGenerateEffectDemo />
+        </div>
       </main>
     </>
   );
