@@ -1,18 +1,37 @@
-import { Menu, Button } from "@mantine/core";
+"use client";
+
+import { Button, Text } from "@mantine/core";
+import { modals } from "@mantine/modals";
+import Link from "next/link";
 
 export function MenuComp() {
   return (
-    <Menu shadow="md" width={200} position="top">
-      <Menu.Target>
-        <Button variant="transparent" color="black">
-          仕事のご依頼
-        </Button>
-      </Menu.Target>
-
-      <Menu.Dropdown>
-        <Menu.Label>お仕事のご依頼</Menu.Label>
-        <Menu.Item>お仕事のご依頼はインスタのDMでお願いします!!</Menu.Item>
-      </Menu.Dropdown>
-    </Menu>
+    <Button
+      color="Black"
+      variant="transparent"
+      onClick={() => {
+        modals.open({
+          title: "お仕事のご依頼について",
+          children: (
+            <>
+              <Text pt="sm" pb="sm">
+                お仕事のご依頼については、現在インスタのDMでお受けしています!
+              </Text>
+              <Link
+                className="text-blue-500"
+                href="https://www.instagram.com/amu6ame6/"
+              >
+                インスタへ
+              </Link>
+              <Button fullWidth onClick={() => modals.closeAll()} mt="md">
+                閉じる
+              </Button>
+            </>
+          ),
+        });
+      }}
+    >
+      お仕事のご依頼
+    </Button>
   );
 }

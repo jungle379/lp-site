@@ -1,9 +1,11 @@
 "use client";
 
+import { CarouselComp } from "./carousel";
+
 export const ClientComponent = () => {
   return (
     <>
-      <div></div>
+      <CarouselComp />
     </>
   );
 };
