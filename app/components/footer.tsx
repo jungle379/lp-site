@@ -5,7 +5,7 @@ export const Footer = () => {
   const INSTA_URL = process.env.REACT_APP_INSTA;
   return (
     <>
-      <div className="flex justify-center h-[100px]">
+      <div className="flex justify-center h-[100px] bg-blue-200">
         <div className="py-5 px-5">
           <Link href={`${INSTA_URL}`}>
             <FaInstagram size={50} />

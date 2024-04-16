@@ -71,9 +71,7 @@ export const Header = () => {
             ) : (
               <div></div>
             )}
-            <div className="pt-4">
-              <MenuComp />
-            </div>
+            <MenuComp />
           </div>
         </div>
       </div>
