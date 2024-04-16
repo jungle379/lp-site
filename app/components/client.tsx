@@ -3,9 +3,5 @@
 import { CarouselComp } from "./carousel";
 
 export const ClientComponent = () => {
-  return (
-    <>
-      <CarouselComp />
-    </>
-  );
+  return <>{/* <CarouselComp /> */}</>;
 };

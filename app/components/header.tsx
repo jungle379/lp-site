@@ -27,7 +27,7 @@ export const Header = () => {
             </Link>
           </div>
           <div
-            className={`pt-5 px-5 text-4xl font-bold text-pink-400 ${isMobile ? "hidden" : ""}`}
+            className={`pt-6 px-5 text-xl font-bold text-pink-400 ${isMobile ? "hidden" : ""}`}
           >
             あむのジュエリーボックス
           </div>
@@ -37,23 +37,43 @@ export const Header = () => {
             <Link href="/">あむのジュエリーボックス</Link>
           </div>
         </div>
-        <div className="px-3 pt-10">
+        <div className="px-4 pt-6 h-[100px]">
           <div className="flex justify-between">
             {usePathname() !== "/post" ? (
-              <div className="px-2 pt-2 text-sm font-semibold">
-                <Link href="/post">投稿</Link>
-              </div>
+              <>
+                <div
+                  className={`px-5 pt-3 text-xl font-bold hover:underline ${isMobile ? "hidden" : ""}`}
+                >
+                  <Link href="/post">投稿</Link>
+                </div>
+                <div
+                  className={`px-2 pt-6 text-sm font-semibold  ${isMobile ? "" : "hidden"}`}
+                >
+                  <Link href="/post">投稿</Link>
+                </div>
+              </>
             ) : (
               <div></div>
             )}
             {usePathname() !== "/introduce" ? (
-              <div className="pl-4 pt-2 text-sm font-semibold">
-                <Link href="/introduce">作者</Link>
-              </div>
+              <>
+                <div
+                  className={`px-5 pt-3 text-xl font-bold hover:underline ${isMobile ? "hidden" : ""}`}
+                >
+                  <Link href="/introduce">作者</Link>
+                </div>
+                <div
+                  className={`pl-4 pt-6 text-sm font-semibold ${isMobile ? "" : "hidden"}`}
+                >
+                  <Link href="/introduce">作者</Link>
+                </div>
+              </>
             ) : (
               <div></div>
             )}
-            <MenuComp />
+            <div className="pt-4">
+              <MenuComp />
+            </div>
           </div>
         </div>
       </div>
