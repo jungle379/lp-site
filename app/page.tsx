@@ -4,7 +4,7 @@ import ServerComponent from "./components/server";
 export default function Home() {
   return (
     <>
-      <main className="h-screen">
+      <main className="min-h-screen">
         <ClientComponent />
         <ServerComponent />
       </main>
