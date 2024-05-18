@@ -39,7 +39,7 @@ export const Header = () => {
         </div>
         <div className="px-4 pt-6 h-[100px]">
           <div className="flex justify-between">
-            {usePathname() !== "/post" ? (
+            {/* {usePathname() !== "/post" ? (
               <>
                 <div
                   className={`px-5 pt-3 text-xl font-bold hover:underline ${isMobile ? "hidden" : ""}`}
@@ -54,7 +54,7 @@ export const Header = () => {
               </>
             ) : (
               <div></div>
-            )}
+            )} */}
             {usePathname() !== "/introduce" ? (
               <>
                 <div
