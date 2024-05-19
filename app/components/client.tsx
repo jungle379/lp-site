@@ -7,7 +7,7 @@ import { Grid } from "@mantine/core";
 export const ClientComponent = () => {
   return (
     <>
-      <div className="text-xl text-thin pt-8">作品</div>
+      <div className="text-xl text-thin pt-8 px-1">作品</div>
       <Grid grow gutter="xl">
         <Grid.Col span={4}>
           <CardContainer className="inter-var">
