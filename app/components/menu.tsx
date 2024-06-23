@@ -32,7 +32,7 @@ export function MenuComp() {
                   お仕事のご依頼については、現在インスタのDMでお受けしています!
                 </Text>
                 <Link
-                  className="text-blue-500"
+                  className="text-blue-500 text-2xl"
                   href="https://www.instagram.com/amu6ame6/"
                 >
                   インスタへ
