@@ -24,7 +24,9 @@ export default function RootLayout({
       <body>
         <MantineProvider>
           <Header />
-          <ModalsProvider>{children}</ModalsProvider>
+          <main className="min-h-svh">
+            <ModalsProvider>{children}</ModalsProvider>
+          </main>
           <Footer />
         </MantineProvider>
       </body>
