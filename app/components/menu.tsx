@@ -39,6 +39,7 @@ export function MenuComp() {
                 </Link>
                 <Button
                   fullWidth
+                  className="bg-blue-400"
                   variant="filled"
                   onClick={() => modals.closeAll()}
                   mt="md"
