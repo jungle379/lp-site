@@ -22,7 +22,7 @@ export function MenuComp() {
       <Button
         color="Black"
         variant="transparent"
-        size={isMobile ? "" : "lg"}
+        size={isMobile ? "xs" : "lg"}
         onClick={() => {
           modals.open({
             title: "お仕事のご依頼について",

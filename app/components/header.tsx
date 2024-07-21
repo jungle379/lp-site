@@ -8,6 +8,7 @@ import Loading from "../loading";
 
 export const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -18,6 +19,7 @@ export const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [window]);
+
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -41,7 +43,7 @@ export const Header = () => {
           </div>
           <div className="px-4 pt-6 h-[100px]">
             <div className="flex justify-between">
-              {usePathname() !== "/introduce" ? (
+              {usePathname() != "/introduce" ? (
                 <>
                   <div
                     className={`px-5 pt-3 text-xl font-bold hover:underline ${isMobile ? "hidden" : ""}`}
@@ -49,7 +51,7 @@ export const Header = () => {
                     <Link href="/introduce">作者</Link>
                   </div>
                   <div
-                    className={`pl-4 pt-6 text-sm font-semibold ${isMobile ? "" : "hidden"}`}
+                    className={`pl-4 pt-6 text-xs font-semibold ${isMobile ? "" : "hidden"}`}
                   >
                     <Link href="/introduce">作者</Link>
                   </div>
