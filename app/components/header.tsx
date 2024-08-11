@@ -25,15 +25,10 @@ export const Header = () => {
       <Suspense fallback={<Loading />}>
         <div className="flex bg-pink-100 justify-between h-[100px]">
           <div className="pt-2 flex">
-            <div className={`${isMobile ? "hidden" : ""}`}>
-              <Link href="/">
-                <Image src="/1.png" alt={"icon"} width={80} height={80} />
-              </Link>
-            </div>
             <div
               className={`pt-6 px-5 text-xl font-bold text-pink-400 ${isMobile ? "hidden" : ""}`}
             >
-              あむのジュエリーボックス
+              <Link href="/">あむのジュエリーボックス</Link>
             </div>
             <div
               className={`pt-10 pl-2 font-bold text-xs ${isMobile ? "" : "hidden"}`}
