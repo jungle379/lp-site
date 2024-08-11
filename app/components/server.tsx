@@ -9,7 +9,7 @@ export default async function ServerComponent() {
   }
   return (
     <div>
-      <div className="text-xl text-thin px-1">最新の投稿</div>
+      <div className="text-xl text-thin px-4">最新の投稿</div>
       <div className="w-full md:hover:underline py-5">
         <ul>
           {contents.map((post) => {
