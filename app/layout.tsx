@@ -19,15 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
+      <body className="min-h-screen">
         <MantineProvider>
           <Suspense fallback={<Loading />}>
             <Header />
-            <main className="min-h-svh">
+            <main>
               <ModalsProvider>{children}</ModalsProvider>
             </main>
             <Footer />

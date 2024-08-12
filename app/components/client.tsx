@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import { Grid } from "@mantine/core";
@@ -18,6 +17,7 @@ export const ClientComponent = () => {
                 <CardItem translateZ="100" className="w-full mt-4">
                   <Image
                     src="/1.png"
+                    priority
                     height="1000"
                     width="1000"
                     className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"

@@ -1,5 +1,4 @@
 "use client";
-
 import { Button, Text } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import Link from "next/link";
