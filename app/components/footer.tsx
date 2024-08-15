@@ -7,7 +7,7 @@ export const Footer = () => {
     <>
       <div className="flex justify-center h-[100px] bg-blue-200">
         <div className="py-5 px-5">
-          <Link href={`${INSTA_URL}`}>
+          <Link href={`${INSTA_URL}`} rel="noopener noreferrer" target="_blank">
             <FaInstagram size={50} />
           </Link>
         </div>

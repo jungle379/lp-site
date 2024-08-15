@@ -6,7 +6,7 @@ import { MenuComp } from "./menu";
 import Loading from "../loading";
 
 export const Header = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,7 +25,7 @@ export const Header = () => {
         <div className="flex bg-pink-100 justify-between h-[100px]">
           <div className="pt-2 flex">
             <div
-              className={`pt-6 px-5 text-xl font-bold text-pink-400 ${isMobile ? "hidden" : ""}`}
+              className={`pt-6 px-5 text-xl font-bold ${isMobile ? "hidden" : ""}`}
             >
               <Link href="/">あむのジュエリーボックス</Link>
             </div>

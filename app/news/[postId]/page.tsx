@@ -29,8 +29,8 @@ export default async function StaticDetailPage({
         <title>{post.title}</title>
       </Head>
       <div className="bg-green-100 min-h-screen h-auto">
-        <div className="pb-5 font-bold text-xl">{post.title}</div>
-        <div>{parse(post.content)}</div>
+        <div className="p-5 font-bold text-xl">{post.title}</div>
+        <div className="p-5">{parse(post.content)}</div>
       </div>
     </>
   );
