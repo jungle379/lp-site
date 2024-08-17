@@ -30,7 +30,7 @@ export default async function StaticDetailPage({
         <title>{post.title}</title>
       </Head>
       <div className="bg-green-100 min-h-screen h-auto">
-        <Link href="/" className="p-5 font-bold text-xl">
+        <Link href="/" className="p-10 font-bold text-xl">
           ← 戻る
         </Link>
         <div className="p-5 font-bold text-xl">{post.title}</div>

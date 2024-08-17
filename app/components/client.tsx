@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
-import { Grid } from "@mantine/core";
 import { Suspense } from "react";
 import Loading from "../loading";
+import { Grid } from "@mantine/core";
 
 export const ClientComponent = () => {
   return (
