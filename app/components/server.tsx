@@ -5,7 +5,7 @@ export default async function ServerComponent() {
   const { contents } = await getList();
 
   if (!contents || contents.length === 0) {
-    return <h1>No contents</h1>;
+    return <h1>投稿の取得に失敗しました！</h1>;
   }
   return (
     <div>
