@@ -6,7 +6,7 @@ import "@mantine/core/styles.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "./components/loading";
 
 export const metadata: Metadata = {
   title: "あむのジュエリーボックス",

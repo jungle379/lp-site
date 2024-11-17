@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MenuComp } from "./menu";
-import Loading from "../loading";
 
 export const Header = () => {
   const [isMobile, setIsMobile] = useState(true);
@@ -21,43 +20,41 @@ export const Header = () => {
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
-        <div className="flex bg-pink-100 justify-between h-[100px]">
-          <div className="pt-2 flex">
-            <div
-              className={`pt-6 px-5 text-xl font-bold ${isMobile ? "hidden" : ""}`}
-            >
-              <Link href="/">あむのジュエリーボックス</Link>
-            </div>
-            <div
-              className={`pt-10 pl-2 font-bold text-xs ${isMobile ? "" : "hidden"}`}
-            >
-              <Link href="/">あむのジュエリーボックス</Link>
-            </div>
+      <div className="flex bg-pink-100 justify-between h-[100px]">
+        <div className="pt-2 flex">
+          <div
+            className={`pt-6 px-5 text-xl font-bold ${isMobile ? "hidden" : ""}`}
+          >
+            <Link href="/">あむのジュエリーボックス</Link>
           </div>
-          <div className="px-4 pt-6 h-[100px]">
-            <div className="flex justify-between">
-              {usePathname() != "/introduce" ? (
-                <>
-                  <div
-                    className={`px-5 pt-3 text-xl font-bold hover:underline ${isMobile ? "hidden" : ""}`}
-                  >
-                    <Link href="/introduce">作者</Link>
-                  </div>
-                  <div
-                    className={`pl-4 pt-6 text-xs font-semibold ${isMobile ? "" : "hidden"}`}
-                  >
-                    <Link href="/introduce">作者</Link>
-                  </div>
-                </>
-              ) : (
-                <></>
-              )}
-              <MenuComp />
-            </div>
+          <div
+            className={`pt-10 pl-2 font-bold text-xs ${isMobile ? "" : "hidden"}`}
+          >
+            <Link href="/">あむのジュエリーボックス</Link>
           </div>
         </div>
-      </Suspense>
+        <div className="px-4 pt-6 h-[100px]">
+          <div className="flex justify-between">
+            {usePathname() != "/introduce" ? (
+              <>
+                <div
+                  className={`px-5 pt-3 text-xl font-bold hover:underline ${isMobile ? "hidden" : ""}`}
+                >
+                  <Link href="/introduce">作者</Link>
+                </div>
+                <div
+                  className={`pl-4 pt-6 text-xs font-semibold ${isMobile ? "" : "hidden"}`}
+                >
+                  <Link href="/introduce">作者</Link>
+                </div>
+              </>
+            ) : (
+              <></>
+            )}
+            <MenuComp />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
