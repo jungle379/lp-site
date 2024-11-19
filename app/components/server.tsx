@@ -1,5 +1,6 @@
 import { getList } from "../libs/client";
 import Link from "next/link";
+import TableUI from "./ui/table";
 
 export default async function ServerComponent() {
   const { contents } = await getList();
@@ -7,10 +8,11 @@ export default async function ServerComponent() {
   if (!contents || contents.length === 0) {
     return <h1>投稿の取得に失敗しました！</h1>;
   }
+
   return (
-    <div>
+    <div className="m-10">
       <div className="text-xl text-thin px-4 py-4">最新の投稿</div>
-      <div className="w-full md:hover:underline py-5">
+      <div className="w-full md:hover:underline py-5 md:hidden">
         <ul>
           {contents.map((post) => {
             return (
@@ -23,6 +25,7 @@ export default async function ServerComponent() {
           })}
         </ul>
       </div>
+      <TableUI contents={contents} />
     </div>
   );
 }
