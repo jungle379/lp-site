@@ -60,7 +60,7 @@ const TableUI: React.FC<TableUIProps> = ({ contents }) => {
       <Table verticalSpacing="md">
         <Table.Thead>
           <Table.Tr>
-            <Table.Th>題名</Table.Th>
+            <Table.Th>タイトル</Table.Th>
             <Table.Th>投稿日</Table.Th>
             <Table.Th>更新日</Table.Th>
           </Table.Tr>

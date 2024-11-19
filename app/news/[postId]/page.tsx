@@ -29,12 +29,19 @@ export default async function StaticDetailPage({
       <Head>
         <title>{post.title}</title>
       </Head>
-      <div className="bg-green-100 min-h-screen h-auto">
-        <Link href="/" className="p-10 font-bold text-xl">
-          ← 戻る
-        </Link>
-        <div className="p-5 font-bold text-xl">{post.title}</div>
-        <div className="p-5">{parse(post.content)}</div>
+      <div className="bg-green-50 min-h-screen">
+        <div className="min-h-96">
+          <div className="text-center p-5 font-bold text-4xl">{post.title}</div>
+          <div className="py-5 px-20 text-2xl">{parse(post.content)}</div>
+        </div>
+        <div className="flex justify-center">
+          <Link
+            href="/"
+            className="p-4 font-bold text-xl border-4 border-black bg-blue-300"
+          >
+            ホームへ戻る
+          </Link>
+        </div>
       </div>
     </>
   );
