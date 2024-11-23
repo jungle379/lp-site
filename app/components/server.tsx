@@ -1,6 +1,8 @@
 import { getList } from "../libs/client";
 import Link from "next/link";
 import TableUI from "./ui/table";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export default async function ServerComponent() {
   const { contents } = await getList();
@@ -25,7 +27,9 @@ export default async function ServerComponent() {
           })}
         </ul>
       </div>
-      <TableUI contents={contents} />
+      <Suspense fallback={<Loading />}>
+        <TableUI contents={contents} />
+      </Suspense>
     </div>
   );
 }

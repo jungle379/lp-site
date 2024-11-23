@@ -2,7 +2,7 @@ import Head from "next/head";
 import { getDetail, getList } from "../../libs/client";
 import parse from "html-react-parser";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { RouteButton } from "@/app/components/ui/button";
 
 export async function generateStaticParams() {
   const { contents } = await getList();
@@ -35,12 +35,7 @@ export default async function StaticDetailPage({
           <div className="py-5 px-20 text-2xl">{parse(post.content)}</div>
         </div>
         <div className="flex justify-center">
-          <Link
-            href="/"
-            className="p-4 font-bold text-xl border-4 border-black bg-blue-300"
-          >
-            ホームへ戻る
-          </Link>
+          <RouteButton />
         </div>
       </div>
     </>
