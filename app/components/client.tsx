@@ -9,7 +9,7 @@ export const ClientComponent = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <div className="text-xl text-thin py-8 px-4">作品</div>
+        <div className="text-xl text-thin my-8 mx-14">作品</div>
         <Grid grow gutter="xl">
           <Grid.Col span={4}>
             <CardContainer className="inter-var">

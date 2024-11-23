@@ -1,7 +1,8 @@
 "use client";
 import { Table } from "@mantine/core";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import Loading from "../loading";
 
 type Post = {
   id: string;
@@ -56,18 +57,20 @@ const TableUI: React.FC<TableUIProps> = ({ contents }) => {
   ));
 
   return (
-    <div className={`m-4 ${isMobile ? "hidden" : ""}`}>
-      <Table verticalSpacing="md">
-        <Table.Thead>
-          <Table.Tr>
-            <Table.Th>タイトル</Table.Th>
-            <Table.Th>投稿日</Table.Th>
-            <Table.Th>更新日</Table.Th>
-          </Table.Tr>
-        </Table.Thead>
-        <Table.Tbody>{rows}</Table.Tbody>
-      </Table>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div className={`m-4 ${isMobile ? "hidden" : ""}`}>
+        <Table verticalSpacing="md">
+          <Table.Thead>
+            <Table.Tr>
+              <Table.Th>タイトル</Table.Th>
+              <Table.Th>投稿日</Table.Th>
+              <Table.Th>更新日</Table.Th>
+            </Table.Tr>
+          </Table.Thead>
+          <Table.Tbody>{rows}</Table.Tbody>
+        </Table>
+      </div>
+    </Suspense>
   );
 };
 export default TableUI;
