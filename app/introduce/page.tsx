@@ -10,7 +10,7 @@ export default function Introduce() {
       <div className="flex justify-center text-2xl items-center font-bold text-center py-5 px-20">
         あむ
       </div>
-      <div className="px-4 py-5">
+      <div className="flex justify-center text-center">
         <TextGenerateEffectDemo />
       </div>
     </>
