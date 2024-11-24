@@ -4,6 +4,14 @@ import parse from "html-react-parser";
 import { notFound } from "next/navigation";
 import { RouteButton } from "@/app/components/ui/button";
 
+const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // 月は 0 ベース
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}年${month}月${day}日`;
+};
+
 export async function generateStaticParams() {
   const { contents } = await getList();
 
@@ -32,6 +40,9 @@ export default async function StaticDetailPage({
       <div className="bg-green-50 min-h-screen">
         <div className="min-h-96">
           <div className="text-center p-5 font-bold text-4xl">{post.title}</div>
+          <div className="text-end text-2xl py-5 px-12">
+            投稿日:{formatDate(post.createdAt)}
+          </div>
           <div className="py-5 px-20 text-2xl">{parse(post.content)}</div>
         </div>
         <div className="flex justify-center">
