@@ -2,7 +2,7 @@ import Head from "next/head";
 import { getDetail, getList } from "../../libs/client";
 import parse from "html-react-parser";
 import { notFound } from "next/navigation";
-import { RouteButton } from "@/app/components/ui/button";
+import { RouteButton } from "../../components/ui/button";
 
 const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
