@@ -13,8 +13,8 @@ export default async function ServerComponent() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="m-10">
-        <div className="text-xl text-thin px-4 py-4">最新の投稿</div>
+      <div>
+        <div className="text-xl text-thin my-8 mx-14">最新の投稿</div>
         <div className="w-full md:hover:underline py-5 md:hidden">
           <ul>
             {contents.map((post) => {

@@ -28,13 +28,13 @@ export const Header = () => {
             <Link href="/">あむのジュエリーボックス</Link>
           </div>
           <div
-            className={`pt-10 pl-2 font-bold text-xs ${isMobile ? "" : "hidden"}`}
+            className={`pt-9 pl-2 font-bold text-xs ${isMobile ? "" : "hidden"}`}
           >
             <Link href="/">あむのジュエリーボックス</Link>
           </div>
         </div>
         <div className="px-4 pt-6 h-[100px]">
-          <div className="flex justify-between">
+          <div className="flex justify-between align-middle">
             {usePathname() != "/introduce" ? (
               <>
                 <div
@@ -43,7 +43,7 @@ export const Header = () => {
                   <Link href="/introduce">作者</Link>
                 </div>
                 <div
-                  className={`pl-4 pt-6 text-xs font-semibold ${isMobile ? "" : "hidden"}`}
+                  className={`pl-4 pt-5 text-xs font-semibold ${isMobile ? "" : "hidden"}`}
                 >
                   <Link href="/introduce">作者</Link>
                 </div>

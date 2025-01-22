@@ -17,7 +17,7 @@ export function MenuComp() {
     };
   }, []);
   return (
-    <div className={isMobile ? "pt-4" : ""}>
+    <div className={isMobile ? "pt-3" : ""}>
       <Button
         color="Black"
         variant="transparent"
@@ -31,7 +31,7 @@ export function MenuComp() {
                   お仕事のご依頼については、現在インスタのDMでお受けしています!
                 </Text>
                 <Link
-                  className="text-blue-500 text-2xl my-40"
+                  className="text-blue-500 text-2xl flex justify-center"
                   href="https://www.instagram.com/amu6ame6/"
                 >
                   インスタへ
