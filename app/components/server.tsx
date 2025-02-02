@@ -17,7 +17,7 @@ export default async function ServerComponent() {
         <div className="text-xl text-thin my-2 md:my-8 mx-8 md:mx-14">
           最新の投稿
         </div>
-        <div className="w-full md:hover:underline py-5 md:hidden">
+        <div className="w-full md:hover:underline md:hidden">
           <ul>
             {contents.map((post) => {
               return (
