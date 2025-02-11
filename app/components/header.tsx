@@ -28,7 +28,7 @@ export const Header = () => {
             <Link href="/">あむのジュエリーボックス</Link>
           </div>
           <div
-            className={`pt-9 pl-2 font-bold text-xs ${isMobile ? "" : "hidden"}`}
+            className={`pt-9 pl-4 font-bold text-xs ${isMobile ? "" : "hidden"}`}
           >
             <Link href="/">あむのジュエリーボックス</Link>
           </div>

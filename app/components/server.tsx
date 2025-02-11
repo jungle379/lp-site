@@ -22,7 +22,7 @@ export default async function ServerComponent() {
             {contents.map((post) => {
               return (
                 <li key={post.id}>
-                  <div className="py-5 my-5 px-10 font-bold text-xl bg-gray-100">
+                  <div className="py-2 my-5 px-4 mx-8 font-bold text-xl bg-gray-100">
                     <Link href={`news/${post.id}`}>{post.title}</Link>
                   </div>
                 </li>
