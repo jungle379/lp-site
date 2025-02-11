@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getIllustrationList } from "../../libs/client";
 import { RouteButton } from "../../components/ui/button";
 
@@ -19,17 +18,11 @@ export default async function Illustrations() {
               key={post.id}
               className="border rounded-lg shadow-md p-4 bg-white"
             >
-              {/* <Link href={`/illustration/${post.id}`} className="block"> */}
-              {/* 画像表示 */}
               <img
                 src={post.title.url}
                 alt={`作品 ${post.id}`}
                 className="w-full h-auto object-cover rounded-md"
               />
-              {/* <p className="text-center text-blue-500 hover:underline mt-2"> */}
-              {/* 作品を見る */}
-              {/* </p> */}
-              {/* </Link> */}
             </li>
           ))}
         </ul>

@@ -2,7 +2,7 @@ import { getList } from "../libs/client";
 import Link from "next/link";
 import TableUI from "./ui/table";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "./ui/loading";
 
 export default async function ServerComponent() {
   const { contents } = await getList();

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "./ui/loading";
 import { getIllustrationList } from "../libs/client";
 
 export default async function Illustrations() {

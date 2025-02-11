@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "./ui/loading";
 import { Grid } from "@mantine/core";
 
 export const ClientComponent = () => {

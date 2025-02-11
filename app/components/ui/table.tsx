@@ -2,7 +2,7 @@
 import { Table } from "@mantine/core";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, Suspense } from "react";
-import Loading from "../loading";
+import Loading from "./loading";
 
 type Post = {
   id: string;
