@@ -11,6 +11,14 @@ export default async function ServerComponent() {
     return <h1>投稿の取得に失敗しました！</h1>;
   }
 
+  // 日付でソートして最新の5件を取得
+  const latestPosts = [...contents]
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    )
+    .slice(0, 5);
+
   return (
     <Suspense fallback={<Loading />}>
       <div>
@@ -19,18 +27,16 @@ export default async function ServerComponent() {
         </div>
         <div className="w-full md:hover:underline md:hidden">
           <ul>
-            {contents.map((post) => {
-              return (
-                <li key={post.id}>
-                  <div className="py-2 my-5 px-4 mx-8 font-bold text-xl bg-gray-100">
-                    <Link href={`news/${post.id}`}>{post.title}</Link>
-                  </div>
-                </li>
-              );
-            })}
+            {latestPosts.map((post) => (
+              <li key={post.id}>
+                <div className="py-2 my-5 px-4 mx-8 font-bold text-xl bg-gray-100">
+                  <Link href={`news/${post.id}`}>{post.title}</Link>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
-        <TableUI contents={contents} />
+        <TableUI contents={latestPosts} />
       </div>
     </Suspense>
   );
