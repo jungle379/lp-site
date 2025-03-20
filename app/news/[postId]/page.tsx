@@ -43,7 +43,7 @@ export default async function StaticDetailPage({
           <div className="text-end sm:text-xs md:text-2xl py-5 px-2 md:px-12">
             投稿日:{formatDate(post.createdAt)}
           </div>
-          <div className="py-5 md:px-20 px-4 text-2xl">
+          <div className="py-5 md:px-20 px-4 text-2xl md:flex md:justify-center">
             {parse(post.content)}
           </div>
         </div>

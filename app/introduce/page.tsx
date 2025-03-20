@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TextGenerateEffectDemo } from "../components/text";
+import { RouteButton } from "../components/ui/button";
 
 export default function Introduce() {
   return (
@@ -12,6 +13,10 @@ export default function Introduce() {
       </div>
       <div className="flex justify-center text-start my-10 mx-10">
         <TextGenerateEffectDemo />
+      </div>
+      <div className="flex justify-center">
+        {/* Next.Routerがクライアントコンポーネントのためコンポーネント化 */}
+        <RouteButton />
       </div>
     </>
   );
