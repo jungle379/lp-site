@@ -36,7 +36,9 @@ export default async function ServerComponent() {
             ))}
           </ul>
         </div>
-        <TableUI contents={latestPosts} />
+        <div className="my-10 mx-8 md:mx-14">
+          <TableUI contents={latestPosts} />
+        </div>
       </div>
     </Suspense>
   );
