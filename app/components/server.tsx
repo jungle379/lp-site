@@ -18,11 +18,11 @@ export default async function ServerComponent() {
   return (
     <Suspense fallback={<Loading />}>
       <>
-        <div className="text-xl text-thin my-2 md:my-8 mx-8 md:mx-14">
+        <div className="text-xl text-thin my-4 md:my-8 mx-8 md:mx-14">
           最新の投稿
         </div>
         {!contents || contents.length === 0 ? (
-          <div className="m-3 flex justify-center font-bold text-xl">
+          <div className="m-4 flex justify-center font-bold text-xl">
             投稿の取得に失敗しました！
           </div>
         ) : (

@@ -14,7 +14,7 @@ export const ClientComponent = () => {
           <Grid.Col span={4}>
             <CardContainer className="inter-var">
               <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border mx-12">
-                <CardItem translateZ="100" className="w-full mt-4">
+                <CardItem translateZ="100" className="w-full">
                   <img
                     src="/cat.jpg"
                     height="1000"
