@@ -22,7 +22,7 @@ export default async function ServerComponent() {
           最新の投稿
         </div>
         {!contents || contents.length === 0 ? (
-          <div className="m-4 flex justify-center font-bold text-xl">
+          <div className="mt-4 mb-10 flex justify-center font-bold text-xl">
             投稿の取得に失敗しました！
           </div>
         ) : (
