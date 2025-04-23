@@ -20,37 +20,18 @@ export const Header = () => {
 
   return (
     <>
-      <div className="flex bg-pink-100 justify-between h-[100px]">
-        <div className="pt-2 flex">
+      <div className="bg-pink-100 h-[100px]">
+        <div>
           <div
-            className={`pt-6 px-5 text-xl font-bold ${isMobile ? "hidden" : ""}`}
+            className={`flex items-center justify-between pt-6 px-5 text-xl font-bold ${isMobile ? "hidden" : ""}`}
           >
             <Link href="/">あむのジュエリーボックス</Link>
+            <MenuComp />
           </div>
           <div
-            className={`pt-9 pl-4 font-bold text-xs ${isMobile ? "" : "hidden"}`}
+            className={`items-center justify-between flex pt-9 pl-4 font-bold text-xs ${isMobile ? "" : "hidden"}`}
           >
             <Link href="/">あむのジュエリーボックス</Link>
-          </div>
-        </div>
-        <div className="px-4 pt-6 h-[100px]">
-          <div className="flex justify-between align-middle">
-            {usePathname() != "/introduce" ? (
-              <>
-                <div
-                  className={`px-5 pt-3 text-xl font-bold hover:underline ${isMobile ? "hidden" : ""}`}
-                >
-                  <Link href="/introduce">作者</Link>
-                </div>
-                <div
-                  className={`pl-4 pt-5 text-xs font-semibold ${isMobile ? "" : "hidden"}`}
-                >
-                  <Link href="/introduce">作者</Link>
-                </div>
-              </>
-            ) : (
-              <></>
-            )}
             <MenuComp />
           </div>
         </div>

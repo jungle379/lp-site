@@ -2,6 +2,7 @@
 import { Button, Text } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export function MenuComp() {
@@ -16,8 +17,19 @@ export function MenuComp() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const router = useRouter();
+
   return (
-    <div className={isMobile ? "pt-3" : ""}>
+    <div className="flex justify-between">
+      <Button
+        color="Black"
+        variant="transparent"
+        size={isMobile ? "xs" : "lg"}
+        onClick={() => router.push("../introduce")}
+      >
+        作者
+      </Button>
       <Button
         color="Black"
         variant="transparent"
