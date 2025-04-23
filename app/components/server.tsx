@@ -8,7 +8,11 @@ export default async function ServerComponent() {
   const { contents } = await getList();
 
   if (!contents || contents.length === 0) {
-    return <h1>投稿の取得に失敗しました！</h1>;
+    return (
+      <h1 className="m-3 flex justify-center font-bold">
+        投稿の取得に失敗しました！
+      </h1>
+    );
   }
 
   // 日付でソートして最新の5件を取得
