@@ -18,7 +18,7 @@ export default async function Illustrations() {
             {contents.map((post) => {
               return (
                 <li key={post.id}>
-                  <div className="px-10 font-bold text-xl">
+                  <div className="m-6 font-bold text-xl">
                     <Link href={`/illustrations/${post.id}`}>ほかの作品</Link>
                   </div>
                 </li>
