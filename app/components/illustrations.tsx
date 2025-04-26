@@ -11,7 +11,7 @@ export default async function Illustrations() {
       <div>
         {!contents || contents.length === 0 ? (
           <div className="mt-4 mb-10 flex justify-center font-bold text-xl">
-            投稿の取得に失敗しました！
+            現在、他のイラストの投稿はありません
           </div>
         ) : (
           <div className="flex justify-center text-xl text-thin underline my-2 md:my-8 mx-8 md:mx-14 hover:underline text-blue-500">
