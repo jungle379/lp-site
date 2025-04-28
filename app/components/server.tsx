@@ -27,7 +27,7 @@ export default async function ServerComponent() {
           </div>
         ) : (
           <>
-            <div className="w-full md:hover:underline md:hidden">
+            <div className="w-full md:hidden">
               <ul>
                 {latestPosts.map((post) => (
                   <li key={post.id}>

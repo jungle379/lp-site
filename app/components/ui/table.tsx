@@ -1,19 +1,9 @@
 "use client";
 import { Table } from "@mantine/core";
 import { useRouter } from "next/navigation";
-import { useState, useEffect, Suspense } from "react";
+import { Suspense } from "react";
 import Loading from "./loading";
-
-type Post = {
-  id: string;
-  title: string;
-  createdAt: string;
-  updatedAt: string;
-};
-
-type TableUIProps = {
-  contents: Post[];
-};
+import { TableUIProps } from "@/app/types/type";
 
 // 日時を YYYYMMDD 形式にフォーマットする関数
 const formatDate = (dateString: string): string => {
@@ -25,19 +15,7 @@ const formatDate = (dateString: string): string => {
 };
 
 const TableUI: React.FC<TableUIProps> = ({ contents }) => {
-  const [isMobile, setIsMobile] = useState(true);
   const router = useRouter();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const handleRowClick = (id: string) => {
     // 記事詳細ページに遷移
@@ -58,7 +36,7 @@ const TableUI: React.FC<TableUIProps> = ({ contents }) => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className={`m-4 ${isMobile ? "hidden" : ""}`}>
+      <div className="mb-40 mx-10 hidden md:block md:border-2">
         <Table verticalSpacing="md">
           <Table.Thead>
             <Table.Tr>

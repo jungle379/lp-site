@@ -17,3 +17,14 @@ export type Illustrations = {
   revisedAt: string;
   title: { url: string; height: number; width: number };
 };
+
+export type Post = {
+  id: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type TableUIProps = {
+  contents: Post[];
+};
