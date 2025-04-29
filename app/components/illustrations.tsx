@@ -10,7 +10,7 @@ export default async function Illustrations() {
     <Suspense fallback={<Loading />}>
       <div>
         {!contents || contents.length === 0 ? (
-          <div className="mt-4 mb-10 flex justify-center font-bold text-sm">
+          <div className="mt-6 mb-10 flex justify-center font-bold text-sm">
             現在、他のイラストの投稿はありません
           </div>
         ) : (
