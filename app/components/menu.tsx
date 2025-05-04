@@ -24,6 +24,7 @@ export function MenuComp() {
     <div className="flex justify-between">
       <Button
         color="Black"
+        className="md:mx-10"
         variant="transparent"
         size={isMobile ? "xs" : "lg"}
         onClick={() => router.push("../introduce")}
@@ -32,6 +33,7 @@ export function MenuComp() {
       </Button>
       <Button
         color="Black"
+        className="md:mx-10"
         variant="transparent"
         size={isMobile ? "xs" : "lg"}
         onClick={() => {
