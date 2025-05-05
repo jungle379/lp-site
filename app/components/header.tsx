@@ -7,7 +7,9 @@ export const Header = () => {
     <>
       <div className="bg-pink-100 h-[100px]">
         <div className="flex items-center justify-between pt-9 md:pt-6 pl-4 md:px-5 text-xs md:text-xl font-bold">
-          <Link href="/">あむのジュエリーボックス</Link>
+          <Link className="md:mx-10" href="/">
+            あむのジュエリーボックス
+          </Link>
           <MenuComp />
         </div>
       </div>
