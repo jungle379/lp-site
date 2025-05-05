@@ -4,10 +4,6 @@ import { RouteButton } from "../../components/ui/button";
 export default async function Illustrations() {
   const { contents } = await getIllustrationList();
 
-  if (!contents || contents.length === 0) {
-    return <h1>投稿の取得に失敗しました！</h1>;
-  }
-
   return (
     <>
       <div className="max-w-5xl mx-auto p-4">

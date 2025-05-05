@@ -9,6 +9,7 @@ export type Blogs = {
   publishedAt: string;
   revisedAt: string;
 };
+
 export type Illustrations = {
   id: string;
   createdAt: string;
