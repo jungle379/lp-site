@@ -3,22 +3,15 @@ import { Button, Text } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useMediaQuery } from "@mantine/hooks";
+import { useMantineTheme } from "@mantine/core";
 
 export function MenuComp() {
-  const [isMobile, setIsMobile] = useState(true);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   const router = useRouter();
+  const theme = useMantineTheme();
+
+  // Mantineのブレークポイントsmより小さいかどうか
+  const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
     <div className="flex justify-between">
