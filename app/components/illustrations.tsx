@@ -16,13 +16,15 @@ export default async function Illustrations() {
         ) : (
           <div className="flex justify-center text-xl text-thin underline my-2 md:my-8 mx-8 md:mx-14 hover:underline text-blue-500">
             <ul>
-              {contents.map((post) => (
-                <li key={post.id}>
-                  <div className="m-6 font-bold text-xl">
-                    <Link href={`/illustrations/${post.id}`}>ほかの作品</Link>
-                  </div>
-                </li>
-              ))}
+              {contents.map((post) => {
+                return (
+                  <li key={post.id}>
+                    <div className="m-6 font-bold text-xl">
+                      <Link href={`/illustrations/${post.id}`}>ほかの作品</Link>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}
