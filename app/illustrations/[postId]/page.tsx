@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getIllustrationList } from "../../libs/client";
 import { RouteButton } from "../../components/ui/button";
 
