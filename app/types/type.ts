@@ -12,11 +12,15 @@ export type Blogs = {
 
 export type Illustrations = {
   id: string;
+  title: {
+    url: string;
+    height: number;
+    width: number;
+  };
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
-  title: { url: string; height: number; width: number };
 };
 
 export type Post = {
