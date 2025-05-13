@@ -20,7 +20,7 @@ export default async function Illustrations() {
                 return (
                   <li key={post.id}>
                     <div className="m-6 font-bold text-xl">
-                      <Link href={`/illustrations/${post.id}`}>ほかの作品</Link>
+                      <Link href={`illustrations/${post.id}`}>ほかの作品</Link>
                     </div>
                   </li>
                 );
