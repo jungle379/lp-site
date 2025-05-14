@@ -36,7 +36,7 @@ const TableUI: React.FC<TableUIProps> = ({ contents }) => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="mb-40 mx-10 hidden md:block md:border-2">
+      <div className="mb-40 mx-36 hidden md:block md:border-2">
         <Table verticalSpacing="md">
           <Table.Thead>
             <Table.Tr>

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getList } from "../libs/client";
 import Link from "next/link";
 import TableUI from "./ui/table";
@@ -32,7 +34,7 @@ export default async function ServerComponent() {
                 <ul>
                   {latestPosts.map((post) => (
                     <li key={post.id}>
-                      <div className="py-2 my-5 px-4 mx-8 font-bold text-xl bg-gray-100">
+                      <div className="py-2 my-5 px-4 mx-8 font-bold text-xl bg-gray-50">
                         <Link href={`news/${post.id}`}>{post.title}</Link>
                       </div>
                     </li>
