@@ -23,11 +23,11 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className="min-h-screen">
+      <body className="min-h-screen flex flex-col">
         <MantineProvider>
           <Suspense fallback={<Loading />}>
             <Header />
-            <main className="h-[450px] md:h-screen">
+            <main className="flex-1">
               <ModalsProvider>{children}</ModalsProvider>
             </main>
             <Footer />

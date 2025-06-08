@@ -13,7 +13,7 @@ export default async function ServerComponent() {
   const latestPosts = [...contents]
     .sort(
       (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()
     )
     .slice(0, 5);
 
