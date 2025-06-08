@@ -27,7 +27,7 @@ export default function RootLayout({
         <MantineProvider>
           <Suspense fallback={<Loading />}>
             <Header />
-            <main>
+            <main className="h-[450px] md:h-screen">
               <ModalsProvider>{children}</ModalsProvider>
             </main>
             <Footer />

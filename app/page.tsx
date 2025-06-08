@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <ClientComponent />
-        <Illustrations />
+        {/* <ClientComponent />
+        <Illustrations /> */}
         <ServerComponent />
       </Suspense>
     </>

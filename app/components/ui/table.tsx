@@ -25,6 +25,7 @@ const TableUI: React.FC<TableUIProps> = ({ contents }) => {
   const rows = contents.map((post) => (
     <Table.Tr
       key={post.id}
+      className="hover:bg-blue-50"
       style={{ cursor: "pointer" }}
       onClick={() => handleRowClick(post.id)}
     >
