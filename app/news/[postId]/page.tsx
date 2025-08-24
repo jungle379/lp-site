@@ -40,11 +40,11 @@ export default async function StaticDetailPage({
       </Head>
       <div className="bg-green-50">
         <div className="min-h-96">
-          <div className="text-center p-5 font-bold text-4xl">{post.title}</div>
+          <div className="text-center p-5 font-bold text-2xl">{post.title}</div>
           <div className="text-end sm:text-xs md:text-xl py-5 px-2 md:px-36">
             投稿日:{formatDate(post.updatedAt)}
           </div>
-          <div className="md:mx-80 py-5 md:px-10 px-4 text-2xl md:flex md:justify-center">
+          <div className="md:mx-80 w-full py-5 md:px-10 px-4 text-2xl md:flex md:justify-center">
             {parse(post.content)}
           </div>
         </div>
