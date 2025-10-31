@@ -13,7 +13,7 @@ export default async function ServerComponent() {
   const latestPosts = [...contents]
     .sort(
       (a, b) =>
-        new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     )
     .slice(0, 5);
 
@@ -22,7 +22,7 @@ export default async function ServerComponent() {
       <>
         <div className="md:my-40">
           <div className="text-xl text-thin my-4 md:my-16 mx-8 md:mx-14 md:text-4xl md:font-bold">
-            最新の投稿
+            最新の投稿(新着順)
           </div>
           {!contents || contents.length === 0 ? (
             <div className="mt-4 md:mt-10 mb-10 flex justify-center font-bold text-xl">
