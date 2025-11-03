@@ -23,7 +23,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="flex flex-col">
         <MantineProvider>
           <Suspense fallback={<Loading />}>
             <Header />
