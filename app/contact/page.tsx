@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TextInput, Textarea, Button, Stack, Text } from "@mantine/core";
+import { TextInput, Textarea, Button, Stack, Text, Box } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { z } from "zod";
 import { RouteButton } from "../components/ui/button";
@@ -53,7 +53,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="mx-auto my-8 px-4 sm:px-8 max-w-md">
+    <Box className="mx-auto my-8 px-4 sm:px-8 max-w-md">
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack className="">
           <TextInput
@@ -94,9 +94,9 @@ export default function ContactPage() {
           )}
         </Stack>
       </form>
-      <div className="mt-2 flex justify-center">
+      {/* <Box className="mt-2 flex justify-center">
         <RouteButton />
-      </div>
-    </div>
+      </Box> */}
+    </Box>
   );
 }
