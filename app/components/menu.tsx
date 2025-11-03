@@ -1,5 +1,5 @@
 "use client";
-import { Button, Text } from "@mantine/core";
+import { Box, Button, Text } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -14,7 +14,7 @@ export function MenuComp() {
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
-    <div className="flex justify-between">
+    <Box className="flex justify-between">
       <Button
         color="Black"
         className="md:mx-10"
@@ -59,6 +59,6 @@ export function MenuComp() {
       >
         お仕事のご依頼
       </Button>
-    </div>
+    </Box>
   );
 }

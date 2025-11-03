@@ -10,7 +10,7 @@ export const RouteButton = () => {
       variant="filled"
       onClick={() => router.push("/")}
     >
-      戻る
+      トップへ戻る
     </Button>
   );
 };
