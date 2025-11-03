@@ -53,16 +53,18 @@ export default function ContactPage() {
   };
 
   return (
-    <Box className="mx-auto my-8 px-4 sm:px-8 max-w-md">
-      <form onSubmit={form.onSubmit(handleSubmit)}>
-        <Stack className="">
+    <Box className="relative mx-auto my-8 px-4 sm:px-8 max-w-md min-h-[100vh] flex flex-col justify-between">
+      <form
+        onSubmit={form.onSubmit(handleSubmit)}
+        className="flex-1 overflow-y-auto pb-28" // ボタン分の余白確保
+      >
+        <Stack>
           <TextInput
             label="タイトル"
             placeholder="例：〇〇について"
             {...form.getInputProps("title")}
             size="md"
             radius="sm"
-            classNames={{ input: "w-full" }}
           />
           <Textarea
             label="本文"
@@ -72,31 +74,36 @@ export default function ContactPage() {
             {...form.getInputProps("body")}
             size="md"
             radius="sm"
-            classNames={{ input: "w-full" }}
           />
-          <Button
-            type="submit"
-            loading={sending}
-            size="md"
-            radius="sm"
-            className="w-full"
-          >
-            送信
-          </Button>
           {message && (
             <Text
               c={message.includes("完了") ? "green" : "red"}
               size="sm"
-              className="flex justify-center"
+              className="flex justify-center mt-2"
             >
               {message}
             </Text>
           )}
         </Stack>
       </form>
-      {/* <Box className="mt-2 flex justify-center">
-        <RouteButton />
-      </Box> */}
+
+      {/* ✅ 画面下部に固定 */}
+      <Box className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] shadow-md">
+        <Box className="max-w-md mx-auto flex flex-col items-center space-y-2">
+          <Button
+            type="submit"
+            form="contact-form"
+            loading={sending}
+            size="md"
+            radius="sm"
+            className="w-full"
+            onClick={() => form.onSubmit(handleSubmit)()}
+          >
+            送信
+          </Button>
+          <RouteButton />
+        </Box>
+      </Box>
     </Box>
   );
 }
