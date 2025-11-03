@@ -53,11 +53,8 @@ export default function ContactPage() {
   };
 
   return (
-    <Box className="relative mx-auto my-8 px-4 sm:px-8 max-w-md min-h-[100vh] flex flex-col justify-between">
-      <form
-        onSubmit={form.onSubmit(handleSubmit)}
-        className="flex-1 overflow-y-auto pb-28" // ボタン分の余白確保
-      >
+    <Box className="relative mx-auto w-full max-w-md px-4 sm:px-6 pt-6 pb-28">
+      <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack>
           <TextInput
             label="タイトル"
@@ -87,8 +84,17 @@ export default function ContactPage() {
         </Stack>
       </form>
 
-      {/* ✅ 画面下部に固定 */}
-      <Box className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] shadow-md">
+      {/* ✅ 固定ボタン（Footerと重ならない） */}
+      <Box
+        className="
+          fixed bottom-0 left-0 w-full
+          bg-white border-t border-gray-200
+          px-4 py-4 sm:px-6
+          pb-[calc(1rem+env(safe-area-inset-bottom))]
+          shadow-md
+          z-50
+        "
+      >
         <Box className="max-w-md mx-auto flex flex-col items-center space-y-2">
           <Button
             type="submit"
