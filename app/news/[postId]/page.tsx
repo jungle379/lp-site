@@ -45,7 +45,7 @@ export default async function StaticDetailPage({
           <Box className="text-end sm:text-xs md:text-xl py-5 px-2 md:px-36">
             投稿日:{formatDate(post.updatedAt)}
           </Box>
-          <Box className="py-5 md:px-10 px-4 text-2xl md:flex md:justify-center">
+          <Box className="py-5 md:px-10 px-4 text-xl md:flex md:justify-center">
             {parse(post.content)}
           </Box>
         </Box>

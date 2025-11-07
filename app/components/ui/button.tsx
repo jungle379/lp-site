@@ -6,7 +6,7 @@ export const RouteButton = () => {
   const router = useRouter();
   return (
     <Button
-      className="my-10 bg-blue-500"
+      className="my-6 bg-blue-500"
       variant="filled"
       onClick={() => router.push("/")}
     >
