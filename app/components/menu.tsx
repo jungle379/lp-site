@@ -14,51 +14,64 @@ export function MenuComp() {
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
-    <Box className="flex justify-between">
+    <Box className="flex items-start gap-4 md:gap-10">
+      {/* 作者ボタン */}
       <Button
         color="Black"
-        className="md:mx-10"
         variant="transparent"
         size={isMobile ? "xs" : "lg"}
         onClick={() => router.push("../introduce")}
       >
         作者
       </Button>
-      <Button
-        color="Black"
-        className="md:mx-10"
-        variant="transparent"
-        size={isMobile ? "xs" : "lg"}
-        onClick={() => {
-          modals.open({
-            title: "お仕事のご依頼について",
-            children: (
-              <>
-                <Text pt="sm" pb="sm">
-                  お仕事のご依頼については、現在インスタのDMでお受けしています!
-                </Text>
-                <Link
-                  className="text-blue-500 text-2xl my-8"
-                  href="https://www.instagram.com/amu6ame6/"
-                >
-                  インスタへ
-                </Link>
-                <Button
-                  fullWidth
-                  className="bg-blue-400"
-                  variant="filled"
-                  onClick={() => modals.closeAll()}
-                  mt="md"
-                >
-                  閉じる
-                </Button>
-              </>
-            ),
-          });
-        }}
-      >
-        お仕事のご依頼
-      </Button>
+
+      {/* お仕事のご依頼 & お問い合わせ（縦並び） */}
+      <Box className="flex flex-col items-center">
+        <Button
+          color="Black"
+          variant="transparent"
+          size={isMobile ? "xs" : "lg"}
+          onClick={() => {
+            modals.open({
+              title: "お仕事のご依頼について",
+              children: (
+                <>
+                  <Text pt="sm" pb="sm">
+                    お仕事のご依頼については、現在インスタのDMでお受けしています！
+                  </Text>
+                  <Link
+                    className="text-blue-500 text-2xl my-8"
+                    href="https://www.instagram.com/amu6ame6/"
+                  >
+                    インスタへ
+                  </Link>
+                  <Button
+                    fullWidth
+                    className="bg-blue-400"
+                    variant="filled"
+                    onClick={() => modals.closeAll()}
+                    mt="md"
+                  >
+                    閉じる
+                  </Button>
+                </>
+              ),
+            });
+          }}
+        >
+          お仕事のご依頼
+        </Button>
+
+        {/* お問い合わせリンク（お仕事のご依頼の下） */}
+        <Link
+          href="/contact"
+          className={`mt-1 font-bold text-black no-underline ${
+            isMobile ? "text-xs" : "text-lg"
+          }`}
+        >
+          お問い合わせ
+        </Link>
+      </Box>
     </Box>
   );
 }
