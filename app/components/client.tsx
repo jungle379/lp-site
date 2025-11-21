@@ -2,7 +2,7 @@
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import { Suspense } from "react";
 import Loading from "./ui/loading";
-import { Grid } from "@mantine/core";
+import { Box, Grid } from "@mantine/core";
 
 export const ClientComponent = () => {
   const handleContextMenu = (evt: any) => {
@@ -12,10 +12,10 @@ export const ClientComponent = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <div onContextMenu={handleContextMenu}>
-          <div className="text-xl text-thin mt-4 md:my-8 mx-8 md:mx-14 md:text-4xl md:font-bold">
+        <Box onContextMenu={handleContextMenu}>
+          <Box className="text-xl text-thin mt-4 md:my-8 mx-8 md:mx-14 md:text-4xl md:font-bold">
             作品
-          </div>
+          </Box>
           <Grid grow gutter="xs">
             <Grid.Col span={4}>
               <CardContainer className="inter-var">
@@ -33,7 +33,7 @@ export const ClientComponent = () => {
               </CardContainer>
             </Grid.Col>
           </Grid>
-        </div>
+        </Box>
       </Suspense>
     </>
   );

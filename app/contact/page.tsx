@@ -14,7 +14,7 @@ const schema = z.object({
 type ContactForm = z.infer<typeof schema>;
 
 export default function ContactPage() {
-  const [message, setMessage] = useState<string | null>(null);
+  const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
   const form = useForm<ContactForm>({
@@ -32,7 +32,7 @@ export default function ContactPage() {
   });
 
   const handleSubmit = async (values: ContactForm) => {
-    setMessage(null);
+    setMessage("");
     setSending(true);
     try {
       const res = await fetch("/api/contact", {
@@ -55,7 +55,7 @@ export default function ContactPage() {
   return (
     <Box className="mx-auto my-8 px-4 sm:px-8 max-w-md">
       <form onSubmit={form.onSubmit(handleSubmit)}>
-        <Stack className="">
+        <Stack>
           <TextInput
             label="タイトル"
             placeholder="例：〇〇について"

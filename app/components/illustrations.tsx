@@ -2,33 +2,34 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Loading from "./ui/loading";
 import { getIllustrationList } from "../libs/client";
+import { Box } from "@mantine/core";
 
 export default async function Illustrations() {
   const { contents } = await getIllustrationList();
 
   return (
     <Suspense fallback={<Loading />}>
-      <div>
+      <Box>
         {!contents || contents.length === 0 ? (
-          <div className="mt-6 mb-10 flex justify-center font-bold text-sm md:text-xl">
+          <Box className="mt-6 mb-10 flex justify-center font-bold text-sm md:text-xl">
             現在、他のイラストの投稿はありません
-          </div>
+          </Box>
         ) : (
-          <div className="flex justify-center text-xl text-thin underline my-2 md:my-8 mx-8 md:mx-14 hover:underline text-blue-500">
+          <Box className="flex justify-center text-xl text-thin underline my-2 md:my-8 mx-8 md:mx-14 hover:underline text-blue-500">
             <ul>
               {contents.map((post) => {
                 return (
                   <li key={post.id}>
-                    <div className="m-6 font-bold text-xl">
+                    <Box className="m-6 font-bold text-xl">
                       <Link href={`illustrations/${post.id}`}>ほかの作品</Link>
-                    </div>
+                    </Box>
                   </li>
                 );
               })}
             </ul>
-          </div>
+          </Box>
         )}
-      </div>
+      </Box>
     </Suspense>
   );
 }

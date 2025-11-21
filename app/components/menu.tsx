@@ -9,6 +9,7 @@ import { useMantineTheme } from "@mantine/core";
 export function MenuComp() {
   const router = useRouter();
   const theme = useMantineTheme();
+  const INSTA_URL = process.env.REACT_APP_INSTA;
 
   // Mantineのブレークポイントsmより小さいかどうか
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
@@ -41,7 +42,9 @@ export function MenuComp() {
                   </Text>
                   <Link
                     className="text-blue-500 text-2xl my-8"
-                    href="https://www.instagram.com/amu6ame6/"
+                    href={`${INSTA_URL}`}
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
                     インスタへ
                   </Link>

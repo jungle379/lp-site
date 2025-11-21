@@ -5,6 +5,7 @@ import Link from "next/link";
 import TableUI from "./ui/table";
 import { Suspense } from "react";
 import Loading from "./ui/loading";
+import { Box } from "@mantine/core";
 
 export default async function ServerComponent() {
   const { contents } = await getList();
@@ -22,19 +23,19 @@ export default async function ServerComponent() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="md:my-40">
-        <div className="text-xl text-thin my-4 md:my-16 mx-8 md:mx-14 md:text-4xl md:font-bold">
+      <Box className="md:my-40">
+        <Box className="text-xl text-thin my-4 md:my-16 mx-8 md:mx-14 md:text-4xl md:font-bold">
           最新の投稿(新着順)
-        </div>
+        </Box>
 
         {!contents || contents.length === 0 ? (
-          <div className="mt-4 md:mt-10 mb-10 flex justify-center font-bold text-xl">
+          <Box className="mt-4 md:mt-10 mb-10 flex justify-center font-bold text-xl">
             投稿の取得に失敗しました！
-          </div>
+          </Box>
         ) : (
           <>
             {/* モバイル表示用 */}
-            <div className="w-full md:hidden">
+            <Box className="w-full md:hidden">
               <ul>
                 {latestPosts.map((post) => {
                   const publishedDate = new Date(post.publishedAt);
@@ -45,27 +46,27 @@ export default async function ServerComponent() {
 
                   return (
                     <li key={post.id}>
-                      <div className="py-2 my-5 px-4 mx-8 font-bold text-base bg-gray-50 flex items-center gap-2">
+                      <Box className="py-2 my-5 px-4 mx-8 font-bold text-base bg-gray-50 flex items-center gap-2">
                         {isNew && (
                           <span className="text-red-500 font-bold text-sm">
                             NEW
                           </span>
                         )}
                         <Link href={`news/${post.id}`}>{post.title}</Link>
-                      </div>
+                      </Box>
                     </li>
                   );
                 })}
               </ul>
-            </div>
+            </Box>
 
             {/* デスクトップ表示用 TableUI */}
-            <div className="my-10 mx-8 md:mx-14">
+            <Box className="my-10 mx-8 md:mx-14">
               <TableUI contents={latestPosts} />
-            </div>
+            </Box>
           </>
         )}
-      </div>
+      </Box>
     </Suspense>
   );
 }
