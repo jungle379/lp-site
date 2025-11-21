@@ -66,7 +66,7 @@ export function MenuComp() {
         <Link
           href="/contact"
           className={`mt-1 font-bold text-black no-underline ${
-            isMobile ? "text-xs" : "text-lg"
+            isMobile ? "text-sm" : "text-lg"
           }`}
         >
           お問い合わせ
