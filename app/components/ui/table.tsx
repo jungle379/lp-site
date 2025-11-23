@@ -4,15 +4,7 @@ import { useRouter } from "next/navigation";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { TableUIProps } from "@/app/types/type";
-
-// 日時を YYYYMMDD 形式にフォーマットする関数
-const formatDate = (dateString: string): string => {
-  const date = new Date(dateString);
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0"); // 月は 0 ベース
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}年${month}月${day}日`;
-};
+import { formatDate } from "../text";
 
 const TableUI: React.FC<TableUIProps> = ({ contents }) => {
   const router = useRouter();

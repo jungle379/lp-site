@@ -5,8 +5,6 @@ import { ModalsProvider } from "@mantine/modals";
 import "@mantine/core/styles.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { Suspense } from "react";
-import Loading from "./components/ui/loading";
 
 export const metadata: Metadata = {
   title: "あむのジュエリーボックス",
@@ -25,13 +23,11 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <MantineProvider>
-          <Suspense fallback={<Loading />}>
-            <Header />
-            <main className="flex-1">
-              <ModalsProvider>{children}</ModalsProvider>
-            </main>
-            <Footer />
-          </Suspense>
+          <Header />
+          <main className="flex-1">
+            <ModalsProvider>{children}</ModalsProvider>
+          </main>
+          <Footer />
         </MantineProvider>
       </body>
     </html>
