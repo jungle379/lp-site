@@ -80,7 +80,7 @@ export default function ContactPage() {
             {...form.getInputProps("body")}
           />
 
-          <Button type="submit" loading={sending} fullWidth>
+          <Button type="submit" loading={sending} mb="xl">
             送信
           </Button>
 
@@ -94,7 +94,7 @@ export default function ContactPage() {
         </Stack>
       </form>
 
-      <Center mt="md">
+      <Center mt="xl">
         <RouteButton />
       </Center>
     </Box>
