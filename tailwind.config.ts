@@ -7,20 +7,20 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    animation: {
-      shimmer: "shimmer 2s linear infinite",
-    },
-    keyframes: {
-      shimmer: {
-        from: {
-          backgroundPosition: "0 0",
-        },
-        to: {
-          backgroundPosition: "-200% 0",
+    extend: {
+      animation: {
+        shimmer: "shimmer 2s linear infinite",
+      },
+      keyframes: {
+        shimmer: {
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
+          },
         },
       },
-    },
-    extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -30,4 +30,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

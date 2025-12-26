@@ -5,7 +5,9 @@ import { RouteButton } from "../../components/ui/button";
 import { Box } from "@mantine/core";
 
 export default async function Illustrations() {
-  const { contents } = await getIllustrationList();
+  const { contents } = await getIllustrationList({
+    orders: "-publishedAt",
+  });
 
   return (
     <>

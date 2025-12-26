@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { TableUIProps } from "@/app/types/type";
-import { formatDate } from "../text";
+import { formatDate } from "@/utils/formatDate";
 
 const TableUI: React.FC<TableUIProps> = ({ contents }) => {
   const router = useRouter();

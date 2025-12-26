@@ -1,52 +1,57 @@
-import Head from "next/head";
 import { getDetail, getList } from "../../libs/client";
 import parse from "html-react-parser";
 import { notFound } from "next/navigation";
 import { RouteButton } from "../../components/ui/button";
 import { Box } from "@mantine/core";
-import { formatDate } from "../../components/text";
 
 export async function generateStaticParams() {
   const { contents } = await getList();
+  return contents.map((post) => ({
+    postId: post.id,
+  }));
+}
 
-  const paths = contents.map((post) => {
-    return {
-      postId: post.id,
-    };
-  });
-  return [...paths];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ postId: string }>;
+}) {
+  const { postId } = await params;
+  const post = await getDetail(postId);
+  if (!post) return {};
+  return { title: post.title };
 }
 
 export default async function StaticDetailPage({
-  params: { postId },
+  params,
 }: {
-  params: { postId: string };
+  params: Promise<{ postId: string }>;
 }) {
+  const { postId } = await params;
   const post = await getDetail(postId);
-  if (!post) {
-    notFound();
-  }
+
+  if (!post) notFound();
+
+  const formattedDate = new Date(post.updatedAt).toLocaleDateString("ja-JP");
 
   return (
-    <>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
-      <Box className="bg-green-50">
-        <Box className="min-h-96">
-          <Box className="text-center p-5 font-bold text-2xl">{post.title}</Box>
-          <Box className="text-end sm:text-xs md:text-xl py-5 px-2 md:px-36">
-            投稿日:{formatDate(post.updatedAt)}
-          </Box>
-          <Box className="py-5 md:px-10 px-4 text-xl md:flex md:justify-center">
-            {parse(post.content)}
-          </Box>
+    <Box bg="green.0">
+      <Box mih={460}>
+        <Box ta="center" p="md" fw={700} fz="xl">
+          {post.title}
         </Box>
-        <Box className="flex justify-center">
-          {/* Next.Routerがクライアントコンポーネントのためコンポーネント化 */}
+
+        <Box ta="right" py="md" px="xl">
+          投稿日：{formattedDate}
+        </Box>
+
+        <Box py="md" px="xl">
+          {parse(String(post.content))}
+        </Box>
+        <Box py="sm" ta="center">
           <RouteButton />
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }

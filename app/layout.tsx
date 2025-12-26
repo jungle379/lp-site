@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
-import { ModalsProvider } from "@mantine/modals";
 import "@mantine/core/styles.css";
+
+import type { Metadata } from "next";
+import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import { ModalsProvider } from "@mantine/modals";
+
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 
@@ -17,17 +19,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <head>
         <ColorSchemeScript />
       </head>
-      <body className="min-h-screen flex flex-col">
+
+      <body>
         <MantineProvider>
-          <Header />
-          <main className="flex-1">
-            <ModalsProvider>{children}</ModalsProvider>
-          </main>
-          <Footer />
+          <ModalsProvider>
+            <Header />
+
+            <main style={{ flex: 1 }}>{children}</main>
+
+            <Footer />
+          </ModalsProvider>
         </MantineProvider>
       </body>
     </html>

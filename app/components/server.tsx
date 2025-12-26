@@ -1,19 +1,15 @@
 export const dynamic = "force-dynamic";
 
 import { getList } from "../libs/client";
+import { Box, Text, Stack, Badge, Button } from "@mantine/core";
 import Link from "next/link";
 import TableUI from "./ui/table";
-import { Suspense } from "react";
-import Loading from "./ui/loading";
-import { Box } from "@mantine/core";
 
 export default async function ServerComponent() {
   const { contents } = await getList();
 
-  // 今日の日付を基準にする
   const today = new Date();
 
-  // 日付でソートして最新の5件を取得
   const latestPosts = [...contents]
     .sort(
       (a, b) =>
@@ -22,51 +18,57 @@ export default async function ServerComponent() {
     .slice(0, 5);
 
   return (
-    <Suspense fallback={<Loading />}>
-      <Box className="md:my-40">
-        <Box className="text-xl text-thin my-4 md:my-16 mx-8 md:mx-14 md:text-4xl md:font-bold">
-          最新の投稿(新着順)
-        </Box>
+    <Box my={80}>
+      <Text size="xl" fw={700} mb={40} mx="lg">
+        最新の投稿（新着順）
+      </Text>
 
-        {!contents || contents.length === 0 ? (
-          <Box className="mt-4 md:mt-10 mb-10 flex justify-center font-bold text-xl">
-            投稿の取得に失敗しました！
+      {!contents || contents.length === 0 ? (
+        <Text ta="center" fw={700} size="lg">
+          投稿の取得に失敗しました！
+        </Text>
+      ) : (
+        <>
+          {/* モバイル */}
+          <Box hiddenFrom="md">
+            <Stack gap="md" mx="lg">
+              {latestPosts.map((post) => {
+                const diffDays =
+                  (today.getTime() - new Date(post.publishedAt).getTime()) /
+                  (1000 * 60 * 60 * 24);
+
+                const isNew = diffDays <= 7 && diffDays >= 0;
+
+                return (
+                  <Box key={post.id} p="md" bg="gray.0">
+                    <Stack gap={6}>
+                      {isNew && (
+                        <Badge color="red" w="fit-content">
+                          NEW
+                        </Badge>
+                      )}
+
+                      <Link href={`/news/${post.id}`}>
+                        <Button
+                          variant="subtle"
+                          fullWidth
+                          justify="space-between"
+                        >
+                          {post.title}
+                        </Button>
+                      </Link>
+                    </Stack>
+                  </Box>
+                );
+              })}
+            </Stack>
           </Box>
-        ) : (
-          <>
-            {/* モバイル表示用 */}
-            <Box className="w-full md:hidden">
-              <ul>
-                {latestPosts.map((post) => {
-                  const publishedDate = new Date(post.publishedAt);
-                  const diffDays =
-                    (today.getTime() - publishedDate.getTime()) /
-                    (1000 * 60 * 60 * 24);
-                  const isNew = diffDays <= 7 && diffDays >= 0;
-
-                  return (
-                    <li key={post.id}>
-                      <Box className="py-2 my-5 px-4 mx-8 font-bold text-base bg-gray-50 flex items-center gap-2">
-                        {isNew && (
-                          <span className="text-red-500 font-bold text-sm">
-                            NEW
-                          </span>
-                        )}
-                        <Link href={`news/${post.id}`}>{post.title}</Link>
-                      </Box>
-                    </li>
-                  );
-                })}
-              </ul>
-            </Box>
-
-            {/* デスクトップ表示用 TableUI */}
-            <Box className="my-10 mx-8 md:mx-14">
-              <TableUI contents={latestPosts} />
-            </Box>
-          </>
-        )}
-      </Box>
-    </Suspense>
+          {/* デスクトップ */}
+          <Box mt={40} mx="lg">
+            <TableUI contents={latestPosts} />
+          </Box>
+        </>
+      )}
+    </Box>
   );
 }

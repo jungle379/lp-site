@@ -1,4 +1,5 @@
 "use client";
+
 import { Box, Button, Text } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import Link from "next/link";
@@ -9,51 +10,52 @@ import { useMantineTheme } from "@mantine/core";
 export function MenuComp() {
   const router = useRouter();
   const theme = useMantineTheme();
-  const INSTA_URL = process.env.REACT_APP_INSTA;
+  const INSTA_URL = process.env.NEXT_PUBLIC_INSTA;
 
-  // Mantineのブレークポイントsmより小さいかどうか
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
     <Box className="flex items-start gap-4 md:gap-10">
-      {/* 作者ボタン */}
+      {/* 作者 */}
       <Button
-        color="Black"
-        variant="transparent"
+        variant="subtle"
+        color="dark"
         size={isMobile ? "xs" : "lg"}
-        onClick={() => router.push("../introduce")}
+        onClick={() => router.push("/introduce")}
       >
         作者
       </Button>
 
-      {/* お仕事のご依頼 & お問い合わせ（縦並び） */}
+      {/* お仕事・お問い合わせ */}
       <Box className="flex flex-col items-center">
+        {/* お仕事のご依頼 */}
         <Button
-          color="Black"
-          variant="transparent"
+          variant="subtle"
+          color="dark"
           size={isMobile ? "xs" : "lg"}
           onClick={() => {
             modals.open({
               title: "お仕事のご依頼について",
               children: (
                 <>
-                  <Text pt="sm" pb="sm">
+                  <Text mt="sm" mb="sm">
                     お仕事のご依頼については、現在インスタのDMでお受けしています！
                   </Text>
+
                   <Link
-                    className="text-blue-500 text-2xl my-8"
-                    href={`${INSTA_URL}`}
-                    rel="noopener noreferrer"
+                    href={INSTA_URL ?? "#"}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 text-xl my-6"
                   >
                     インスタへ
                   </Link>
+
                   <Button
                     fullWidth
-                    className="bg-blue-400"
-                    variant="filled"
-                    onClick={() => modals.closeAll()}
                     mt="md"
+                    color="blue"
+                    onClick={() => modals.closeAll()}
                   >
                     閉じる
                   </Button>
@@ -65,15 +67,16 @@ export function MenuComp() {
           お仕事のご依頼
         </Button>
 
-        {/* お問い合わせリンク（お仕事のご依頼の下） */}
-        <Link
-          href="/contact"
-          className={`mt-1 font-bold text-black no-underline ${
-            isMobile ? "text-sm" : "text-lg"
-          }`}
+        {/* ✅ お問い合わせ（ボタン化） */}
+        <Button
+          variant="subtle"
+          color="dark"
+          size={isMobile ? "xs" : "lg"}
+          mt={4}
+          onClick={() => router.push("/contact")}
         >
           お問い合わせ
-        </Link>
+        </Button>
       </Box>
     </Box>
   );

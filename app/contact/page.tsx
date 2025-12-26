@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { TextInput, Textarea, Button, Stack, Text, Box } from "@mantine/core";
+import {
+  TextInput,
+  Textarea,
+  Button,
+  Stack,
+  Text,
+  Box,
+  Center,
+} from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { z } from "zod";
 import { RouteButton } from "../components/ui/button";
@@ -34,12 +42,14 @@ export default function ContactPage() {
   const handleSubmit = async (values: ContactForm) => {
     setMessage("");
     setSending(true);
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
+
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "送信に失敗しました");
 
@@ -53,50 +63,40 @@ export default function ContactPage() {
   };
 
   return (
-    <Box className="mx-auto my-8 px-4 sm:px-8 max-w-md">
+    <Box mih={460} maw={420} mx="auto" my="xl" px="md">
       <form onSubmit={form.onSubmit(handleSubmit)}>
-        <Stack>
+        <Stack gap="md">
           <TextInput
             label="タイトル"
             placeholder="例：〇〇について"
             {...form.getInputProps("title")}
-            size="md"
-            radius="sm"
-            classNames={{ input: "w-full" }}
           />
+
           <Textarea
             label="本文"
             placeholder="お問い合わせ内容を入力してください"
             minRows={5}
             autosize
             {...form.getInputProps("body")}
-            size="md"
-            radius="sm"
-            classNames={{ input: "w-full" }}
           />
-          <Button
-            className="bg-blue-500 w-full"
-            type="submit"
-            loading={sending}
-            size="md"
-            radius="sm"
-          >
+
+          <Button type="submit" loading={sending} fullWidth>
             送信
           </Button>
+
           {message && (
-            <Text
-              c={message.includes("完了") ? "green" : "red"}
-              size="sm"
-              className="flex justify-center"
-            >
-              {message}
-            </Text>
+            <Center>
+              <Text c={message.includes("完了") ? "green" : "red"} size="sm">
+                {message}
+              </Text>
+            </Center>
           )}
         </Stack>
       </form>
-      <Box className="mt-2 flex justify-center">
+
+      <Center mt="md">
         <RouteButton />
-      </Box>
+      </Center>
     </Box>
   );
 }

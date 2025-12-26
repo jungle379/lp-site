@@ -1,24 +1,36 @@
 import Image from "next/image";
+import { Box, Center, Text } from "@mantine/core";
 import { TextGenerateEffectDemo } from "../components/text";
 import { RouteButton } from "../components/ui/button";
-import { Box } from "@mantine/core";
 
 export default function Introduce() {
   return (
     <>
-      <Box className="flex justify-center items-center text-center py-10 px-20">
-        <Image src="/portrait.jpg" alt={"icon"} width={250} height={250} />
-      </Box>
-      <Box className="flex justify-center text-4xl items-center font-bold text-center py-5 px-20">
+      {/* 画像 */}
+      <Center py="xl">
+        <Image
+          src="/portrait.jpg"
+          alt="icon"
+          width={250}
+          height={250}
+          priority
+        />
+      </Center>
+
+      {/* 名前 */}
+      <Text ta="center" fw={700} fz="2rem" my="md">
         あむ
-      </Box>
-      <Box className="flex justify-center text-start md:my-24 my-10 md:mx-60 mx-10">
+      </Text>
+
+      {/* 紹介文 */}
+      <Box maw={900} mx="auto" my="xl" px="md">
         <TextGenerateEffectDemo />
       </Box>
-      <Box className="flex justify-center">
-        {/* Next.Routerがクライアントコンポーネントのためコンポーネント化 */}
+
+      {/* 戻るボタン */}
+      <Center my="xl">
         <RouteButton />
-      </Box>
+      </Center>
     </>
   );
 }
