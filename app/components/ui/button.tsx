@@ -8,7 +8,8 @@ export const RouteButton = () => {
   return (
     <Button
       className="my-6 bg-blue-500"
-      variant="filled"
+      mx="auto"
+      display="block"
       onClick={() => router.push("/")}
     >
       トップへ戻る

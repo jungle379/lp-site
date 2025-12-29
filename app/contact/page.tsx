@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  TextInput,
-  Textarea,
-  Button,
-  Stack,
-  Text,
-  Box,
-  Center,
-} from "@mantine/core";
+import { TextInput, Textarea, Button, Stack, Text, Box } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { z } from "zod";
 import { RouteButton } from "../components/ui/button";
@@ -42,14 +34,12 @@ export default function ContactPage() {
   const handleSubmit = async (values: ContactForm) => {
     setMessage("");
     setSending(true);
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "送信に失敗しました");
 
@@ -63,40 +53,61 @@ export default function ContactPage() {
   };
 
   return (
-    <Box mih={460} maw={420} mx="auto" my="xl" px="md">
+    <Box
+      mx="auto"
+      my="xl"
+      px="md"
+      maw={520} // ← PC時に少し広げる
+    >
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack gap="md">
           <TextInput
             label="タイトル"
             placeholder="例：〇〇について"
             {...form.getInputProps("title")}
+            size="md"
           />
 
+          {/* 本文を大きく */}
           <Textarea
             label="本文"
             placeholder="お問い合わせ内容を入力してください"
-            minRows={5}
+            minRows={8} // ← ここ重要
             autosize
+            size="md" // ← 視認性UP
             {...form.getInputProps("body")}
           />
 
-          <Button type="submit" loading={sending} mb="xl">
-            送信
-          </Button>
+          {/* ボタン幅を揃えるための Box */}
+          <Box maw={300} mx="auto">
+            <Button
+              fullWidth
+              type="submit"
+              loading={sending}
+              size="md"
+              radius="sm"
+              className="bg-blue-500"
+            >
+              送信
+            </Button>
+          </Box>
 
           {message && (
-            <Center>
-              <Text c={message.includes("完了") ? "green" : "red"} size="sm">
-                {message}
-              </Text>
-            </Center>
+            <Text
+              c={message.includes("完了") ? "green" : "red"}
+              size="sm"
+              ta="center"
+            >
+              {message}
+            </Text>
           )}
         </Stack>
       </form>
 
-      <Center mt="xl">
+      {/* トップに戻るボタンも同じ幅に */}
+      <Box mt="xl" maw={300} mx="auto">
         <RouteButton />
-      </Center>
+      </Box>
     </Box>
   );
 }
