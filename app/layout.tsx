@@ -24,7 +24,9 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
 
-      <body>
+      <body
+        style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+      >
         <MantineProvider>
           <ModalsProvider>
             <Header />

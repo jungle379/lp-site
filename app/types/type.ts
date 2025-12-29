@@ -10,6 +10,15 @@ export type Blogs = {
   revisedAt: string;
 };
 
+type PostProp = {
+  id: string;
+  title: string;
+};
+
+export type PostButtonProps = {
+  post: PostProp;
+};
+
 export type Illustrations = {
   id: string;
   title: {

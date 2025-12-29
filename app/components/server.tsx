@@ -1,9 +1,9 @@
 export const dynamic = "force-dynamic";
 
 import { getList } from "../libs/client";
-import { Box, Text, Stack, Badge, Button } from "@mantine/core";
-import Link from "next/link";
+import { Box, Text, Stack, Badge } from "@mantine/core";
 import TableUI from "./ui/table";
+import { PostButton } from "./ui/button";
 
 export default async function ServerComponent() {
   const { contents } = await getList();
@@ -18,7 +18,7 @@ export default async function ServerComponent() {
     .slice(0, 5);
 
   return (
-    <Box my={80}>
+    <Box mt={{ base: 40, mb: 80 }}>
       <Text size="xl" fw={700} mb={40} mx="lg">
         最新の投稿（新着順）
       </Text>
@@ -47,16 +47,7 @@ export default async function ServerComponent() {
                           NEW
                         </Badge>
                       )}
-
-                      <Link href={`/news/${post.id}`}>
-                        <Button
-                          variant="subtle"
-                          fullWidth
-                          justify="space-between"
-                        >
-                          {post.title}
-                        </Button>
-                      </Link>
+                      <PostButton post={post} />
                     </Stack>
                   </Box>
                 );
@@ -64,7 +55,7 @@ export default async function ServerComponent() {
             </Stack>
           </Box>
           {/* デスクトップ */}
-          <Box mt={40} mx="lg">
+          <Box mt={40} mx="lg" mb={0}>
             <TableUI contents={latestPosts} />
           </Box>
         </>
