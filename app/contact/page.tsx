@@ -72,9 +72,9 @@ export default function ContactPage() {
           <Textarea
             label="本文"
             placeholder="お問い合わせ内容を入力してください"
-            minRows={8} // ← ここ重要
+            minRows={8}
             autosize
-            size="md" // ← 視認性UP
+            size="md"
             {...form.getInputProps("body")}
           />
 
