@@ -43,7 +43,7 @@ export default function ContactPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "送信に失敗しました");
 
-      setMessage("送信が完了しました。ありがとうございます！");
+      setMessage("送信が完了しました！");
       form.reset();
     } catch (error: any) {
       setMessage(error.message);
@@ -53,12 +53,7 @@ export default function ContactPage() {
   };
 
   return (
-    <Box
-      mx="auto"
-      my="xl"
-      px="md"
-      maw={520} // ← PC時に少し広げる
-    >
+    <Box mx="auto" my="xl" px="md" maw={520}>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack gap="md">
           <TextInput
