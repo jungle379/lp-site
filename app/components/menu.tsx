@@ -15,7 +15,7 @@ export function MenuComp() {
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
-    <Box className="flex items-start gap-4 md:gap-10">
+    <Box className="flex items-center gap-4 md:gap-10">
       {/* 作者 */}
       <Button
         variant="subtle"
@@ -72,7 +72,6 @@ export function MenuComp() {
           variant="subtle"
           color="dark"
           size={isMobile ? "xs" : "lg"}
-          mt={4}
           onClick={() => router.push("/contact")}
         >
           お問い合わせ

@@ -12,15 +12,14 @@ export const Header = () => {
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
-    <Box bg="pink.1" h={100} className="flex flex-col justify-center">
-      <Box className="flex items-center justify-between px-4 md:px-5">
+    <Box bg="pink.1" h={isMobile ? 64 : 80} className="flex items-center">
+      <Box className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 md:px-6">
         {/* サイトタイトル（ボタン化） */}
         <Button
           variant="subtle"
           color="dark"
           size={isMobile ? "xs" : "lg"}
-          mt={4}
-          onClick={() => router.push("/contact")}
+          onClick={() => router.push("/")}
         >
           あむのジュエリーボックス
         </Button>
